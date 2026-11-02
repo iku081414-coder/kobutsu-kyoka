@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<title>古物商許可の必要書類チェック（無料）｜質問に答えるだけの申請準備ナビ</title>
+<meta name="description" content="古物商の許可申請に必要な書類を、質問に答えるだけで自分専用のチェックリストに。個人・法人、管理者、ネット販売の有無で変わる書類、手数料19,000円、期間の目安、よくあるミスまで。無料・登録不要。">
+<meta name="theme-color" content="#1f4d3a">
+<link rel="canonical" href="https://iku081414-coder.github.io/kobutsu-kyoka/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="古物商許可の必要書類チェック（無料）">
+<meta property="og:description" content="質問に答えるだけで、古物商の許可申請に必要な書類が自分専用のチェックリストに。無料・登録不要。">
+<meta property="og:url" content="https://iku081414-coder.github.io/kobutsu-kyoka/">
+<meta property="og:image" content="https://iku081414-coder.github.io/kobutsu-kyoka/icons/icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="kyoka.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="logo" href="./"><img src="icons/icon.svg" alt="" width="28" height="28">古物商許可ナビ</a>
+    <span class="head-note">無料・登録不要</span>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <h1>古物商の許可申請、何をそろえればいい？<br>質問に答えるだけで、あなた専用のチェックリスト。</h1>
+    <ul class="points">
+      <li>個人か法人か、管理者は誰か、ネットで売るかで<b>必要な書類が変わります</b></li>
+      <li>書類ごとに<b>どこで取るか・よくあるミス</b>まで表示</li>
+      <li>チェックした進み具合は<b>この端末だけに保存</b>。入力はどこにも送りません</li>
+    </ul>
+    <a class="btn primary" href="#navi">さっそく始める</a>
+  </div>
+</section>
+
+<section id="navi" class="wrap app" aria-label="申請準備ナビ">
+  <div class="panel">
+    <h2 class="step-title">① あなたのことを教えてください</h2>
+    <form id="q" autocomplete="off">
+      <fieldset>
+        <legend>申請するのは？</legend>
+        <div class="seg">
+          <label><input type="radio" name="type" value="kojin" checked><span>個人</span></label>
+          <label><input type="radio" name="type" value="hojin"><span>法人（会社）</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset id="qOfficers" hidden>
+        <legend>役員は何人？（監査役以上・代表者を含む）</legend>
+        <input type="number" name="officers" min="1" max="20" value="1" inputmode="numeric" class="short">
+      </fieldset>
+
+      <fieldset>
+        <legend>営業所の管理者は？</legend>
+        <p class="hint">管理者＝営業所ごとに1人置く責任者です。その営業所で働ける人でないとなれません。</p>
+        <div class="seg">
+          <label><input type="radio" name="manager" value="self" checked><span id="mgrSelfLabel">自分が兼ねる</span></label>
+          <label><input type="radio" name="manager" value="other"><span id="mgrOtherLabel">別の人に頼む</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>ネットで売る予定は？</legend>
+        <div class="seg col">
+          <label><input type="radio" name="web" value="site"><span>自分のホームページ・ネットショップ・オークションのストアで売る</span></label>
+          <label><input type="radio" name="web" value="flea"><span>フリマアプリ（メルカリ等）で個人として出品するだけ</span></label>
+          <label><input type="radio" name="web" value="none" checked><span>ネットでは売らない（店や対面のみ）</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>国籍は？（申請する人・役員・管理者）</legend>
+        <div class="seg">
+          <label><input type="radio" name="nation" value="jp" checked><span>全員 日本</span></label>
+          <label><input type="radio" name="nation" value="other"><span>日本以外の人がいる</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>警察署に書類を出すのは？</legend>
+        <div class="seg">
+          <label><input type="radio" name="proxy" value="self" checked><span>自分で出す</span></label>
+          <label><input type="radio" name="proxy" value="other"><span>代わりの人に頼む</span></label>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="panel result" id="result">
+    <div class="result-head">
+      <h2 class="step-title">② あなたのチェックリスト</h2>
+      <div class="progress"><span id="progText">0 / 0</span><div class="bar"><div id="progBar"></div></div></div>
+    </div>
+    <p class="hint">そろったものにチェックを付けていきましょう（この端末に自動で保存されます）。</p>
+    <div id="list"></div>
+
+    <div class="box money">
+      <h3>お金と期間の目安</h3>
+      <ul>
+        <li>申請手数料：<b>19,000円</b>（警察署で払う。不許可や取り下げでも返ってきません）</li>
+        <li>住民票の写し・身分証明書の発行手数料：市区町村ごとに数百円ずつ（人数分）</li>
+        <li>許可が出るまで：<b>概ね40日</b>（神奈川県・大阪府の案内。地域で違います）</li>
+        <li><b>許可の連絡が来るまでは、古物商として営業できません</b></li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h3>欠格事由（許可を受けられない人）のセルフチェック</h3>
+      <p class="hint">申請する人・役員・管理者が、次のどれかに当てはまると許可は出ません（古物営業法 第4条）。</p>
+      <ul class="small-list">
+        <li>破産して、まだ復権していない</li>
+        <li>禁錮以上の刑、または古物営業法・特定の罪の罰金を受け、5年たっていない</li>
+        <li>暴力的な不法行為を行うおそれがある／暴力団対策法の命令等から3年たっていない</li>
+        <li>住居が定まらない</li>
+        <li>古物営業の許可を取り消されて5年たっていない（取消し前に返納した場合を含む）</li>
+        <li>精神機能の障害で、業務を適正に行うための判断などが適正にできない</li>
+        <li>成年者と同じ行為能力がない未成年（結婚している・法定代理人の許可がある場合は例外）</li>
+        <li>営業所ごとに管理者を選べない相当な理由がある</li>
+      </ul>
+      <label class="check"><input type="checkbox" id="kakkaku"> どれにも当てはまらないことを確認した</label>
+    </div>
+
+    <div class="box">
+      <h3>申請の流れ</h3>
+      <ol class="flow">
+        <li>上のチェックリストの書類をそろえる（申請書の様式は、都道府県警察のサイトからダウンロード）</li>
+        <li><b>主たる営業所のある場所を担当する警察署</b>に出す（担当の課は地域で違う。先に電話で確認すると確実）</li>
+        <li>手数料19,000円を払う</li>
+        <li>概ね40日で、許可・不許可の連絡</li>
+        <li>許可が出たら営業スタート。取引のたびの記録は<a href="https://iku081414-coder.github.io/kobutsu-daicho/">無料の古物台帳</a>で</li>
+      </ol>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary" id="printBtn" type="button">チェックリストを印刷・PDFで保存</button>
+      <button class="btn ghost" id="resetBtn" type="button">チェックを全部外す</button>
+    </div>
+  </div>
+</section>
+
+<article class="wrap guide" id="guide">
+  <h2>古物商許可の申請ガイド</h2>
+  <p class="lead">このページは、警察の公式ページの内容をもとにした一般的な目安です。書類の作成代行はしていません。地域によって細かい違いがあるので、<b>最終的には、主たる営業所を担当する警察署</b>に確認してください。</p>
+
+  <h3>古物商の許可がいるのはどんなとき？</h3>
+  <p>中古品（古物）を買い取って売る、交換する、預かって売るといった商売をするときは、都道府県公安委員会の許可が必要です。一度でも消費者の手に渡った物は、未使用でも「古物」になります。</p>
+  <p>一方で、<b>自分で使っていた物や、使うつもりで買ったけれど使わなかった物を売るだけなら、原則として許可はいりません</b>。ただし「自分で使う」と言いながら、実際は転売するために買っている場合は許可が必要です（愛知県警・大阪府警のQ&amp;A）。</p>
+
+  <h3>必要な書類（警視庁の一覧より）</h3>
+  <table class="facts">
+    <tr><th>許可申請書</th><td>古物営業法施行規則の別記様式第1号。様式は都道府県警察のサイトから</td></tr>
+    <tr><th>住民票の写し</th><td>本籍の記載があり、マイナンバー（個人番号）の記載がないもの。外国籍の人は国籍等の記載があるもの</td></tr>
+    <tr><th>身分証明書</th><td><b>本籍地の市区町村</b>で発行する証明書（運転免許証のことではありません）。日本国籍の人のみ</td></tr>
+    <tr><th>略歴書</th><td>最近5年間の経歴</td></tr>
+    <tr><th>誓約書</th><td>個人用・役員用・管理者用がある</td></tr>
+    <tr><th>（法人）定款・登記事項証明書</th><td>法人で申請する場合</td></tr>
+    <tr><th>URLの使用権限を示す資料</th><td>ホームページやネットショップで取引する場合</td></tr>
+  </table>
+  <p>個人なら「本人」と「管理者」の分、法人なら「役員全員」と「管理者」の分が必要です。本人が管理者を兼ねる場合は、同じ人の分を重ねて用意する必要はありません（目安。管轄署に確認を）。「登記されていないことの証明書」は、令和元年12月14日から不要になりました（神奈川県警）。</p>
+
+  <h3>よくあるミス</h3>
+  <ul>
+    <li><b>「身分証明書」を運転免許証だと思う</b> → 本籍地の市区町村の窓口（戸籍課など）で発行してもらう書類です</li>
+    <li><b>住民票に本籍が載っていない／マイナンバーが載っている</b> → 取るときに「本籍あり・マイナンバーなし」と伝えましょう</li>
+    <li><b>申請先を間違える</b> → 自宅ではなく「主たる営業所」を担当する警察署です</li>
+    <li><b>許可が出る前に売り始める</b> → 連絡が来るまで営業はできません</li>
+  </ul>
+
+  <h3>ネット（ホームページ・ネットショップ）で売るとき</h3>
+  <p>ホームページで取引する場合は、そのURLを使う権限があることを示す資料が必要です。例として、プロバイダ等から届いたURL割り当ての通知書のコピーや、ドメインの登録情報（WHOIS）を印刷したものがあります。個人は本人、法人は法人名・代表者名・管理者名で登録されていることが確認できる必要があります。オークションサイトにストアを出店する場合も、そのURLの届出が必要です（大阪府警）。フリマアプリで個人として出品するだけの場合の扱いは、公式ページに記載がなかったので、管轄の警察署に確認してください。</p>
+
+  <h3>管理者とは？</h3>
+  <p>古物商は、営業所ごとに管理者を1人選ばなければなりません（古物営業法 第13条）。遠くに住んでいて、その営業所で働けない人は管理者になれません（大阪府警）。</p>
+
+  <h3>費用と期間</h3>
+  <p>申請手数料は19,000円です。不許可や取り下げでも返ってきません（大阪府警）。許可が出るまでの期間は、神奈川県・大阪府では概ね40日と案内されています。</p>
+
+  <h3>許可が取れたら</h3>
+  <p>古物商は、買い取りなどのたびに帳簿（古物台帳）への記録が必要です。スマホ・PCで無料で書ける<a href="https://iku081414-coder.github.io/kobutsu-daicho/">古物台帳アプリ（登録不要）</a>もどうぞ。</p>
+
+  <h3>出典</h3>
+  <ul class="src">
+    <li><a href="https://www.keishicho.metro.tokyo.lg.jp/tetsuzuki/kobutsu/tetsuzuki/kyoka.html" rel="noopener" target="_blank">警視庁「古物商許可申請」</a></li>
+    <li><a href="https://www.keishicho.metro.tokyo.lg.jp/tetsuzuki/kobutsu/youshiki/shinsei_kobutsui.html" rel="noopener" target="_blank">警視庁「申請届出様式等一覧（古物商・古物市場主用）」</a></li>
+    <li><a href="https://www.police.pref.kanagawa.jp/tetsuzuki/eigyokankei/kobutsu/mesd0019.html" rel="noopener" target="_blank">神奈川県警察「古物営業許可申請手続」</a></li>
+    <li><a href="https://www.police.pref.osaka.lg.jp/tetsuduki/kyoninka/kobutsu/kobutsu/kobutsu_shinki/3684.html" rel="noopener" target="_blank">大阪府警「古物商許可申請」</a></li>
+    <li><a href="https://www.police.pref.osaka.lg.jp/tetsuduki/kyoninka/kobutsu/kobutsu/3685.html" rel="noopener" target="_blank">大阪府警「古物営業法Q&amp;A」</a></li>
+    <li><a href="https://www.pref.aichi.jp/police/shinsei/sonota/qanda.html" rel="noopener" target="_blank">愛知県警察「古物営業法Q&amp;A」</a></li>
+  </ul>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p><a href="privacy.html">プライバシーと免責</a>　／　<a href="https://iku081414-coder.github.io/kobutsu-daicho/">古物台帳（無料）</a></p>
+    <p class="small">このツールは書類の作成や申請の代行をするものではなく、法律の助言でもありません。必要な書類や手続きは、主たる営業所を担当する警察署に確認してください。</p>
+  </div>
+</footer>
+
+<div id="print" aria-hidden="true"></div>
+<script src="app.js" type="module"></script>
+</body>
+</html>
