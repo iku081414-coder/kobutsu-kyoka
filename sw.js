@@ -1,5 +1,5 @@
 // オフラインでも開けるように、画面のファイルだけをキャッシュする
-const CACHE = 'kyoka-v1';
+const CACHE = 'kyoka-v2';
 const FILES = ['./', 'index.html', 'style.css', 'kyoka.css', 'app.js', 'privacy.html', 'manifest.webmanifest', 'icons/icon.svg', 'icons/icon-180.png', 'icons/icon-192.png', 'icons/icon-512.png'];
 
 self.addEventListener('install', (e) => {
